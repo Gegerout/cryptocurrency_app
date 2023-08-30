@@ -24,12 +24,9 @@ import androidx.compose.ui.text.font.FontStyle
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.dp
 import androidx.hilt.navigation.compose.hiltViewModel
-import androidx.navigation.NavController
 import com.google.accompanist.flowlayout.FlowRow
-import com.plcoding.cryptoapp.presentation.Screen
 import com.plcoding.cryptoapp.presentation.coin_detail.components.CoinTag
 import com.plcoding.cryptoapp.presentation.coin_detail.components.TeamListItem
-import com.plcoding.cryptoapp.presentation.coint_list.components.CoinListItem
 
 @Composable
 fun CoinDetailScreen(
@@ -93,7 +90,7 @@ fun CoinDetailScreen(
         if (state.error.isNotBlank()) {
             Text(
                 text = state.error,
-                color = MaterialTheme.colors.error,
+                color = Color.Red,
                 textAlign = TextAlign.Center,
                 modifier = Modifier
                     .fillMaxWidth()
