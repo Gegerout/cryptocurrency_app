@@ -21,11 +21,14 @@ class MainActivity : ComponentActivity() {
             CryptoApp {
                 Surface(color = MaterialTheme.colors.background) {
                     val navController = rememberNavController()
-                    NavHost(navController = navController, startDestination = Screen.CoinListScreen.route) {
-                        composable(route=Screen.CoinListScreen.route) {
+                    NavHost(
+                        navController = navController,
+                        startDestination = Screen.CoinListScreen.route
+                    ) {
+                        composable(route = Screen.CoinListScreen.route) {
                             CoinListScreen(navController)
                         }
-                        composable(route=Screen.CoinDetailScreen.route + "/{coinId}") {
+                        composable(route = Screen.CoinDetailScreen.route + "/{coinId}") {
                             CoinDetailScreen()
                         }
                     }
