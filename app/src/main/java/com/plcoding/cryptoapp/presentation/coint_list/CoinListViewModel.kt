@@ -4,6 +4,7 @@ import androidx.compose.runtime.State
 import androidx.compose.runtime.mutableStateOf
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
+import com.plcoding.cryptoapp.common.Constants.BASE_ERROR_MESSAGE
 import com.plcoding.cryptoapp.common.Resource
 import com.plcoding.cryptoapp.domain.usecase.get_coins.GetCoinsUseCase
 import dagger.hilt.android.lifecycle.HiltViewModel
@@ -30,7 +31,7 @@ class CoinListViewModel @Inject constructor(private val getCoinsUseCase: GetCoin
 
                 is Resource.Error -> {
                     _state.value =
-                        CoinListState(error = result.message ?: "An unexpected error occured")
+                        CoinListState(error = result.message ?: BASE_ERROR_MESSAGE)
                 }
 
                 is Resource.Loading -> {

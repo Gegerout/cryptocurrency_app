@@ -5,6 +5,7 @@ import androidx.compose.runtime.mutableStateOf
 import androidx.lifecycle.SavedStateHandle
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
+import com.plcoding.cryptoapp.common.Constants.BASE_ERROR_MESSAGE
 import com.plcoding.cryptoapp.common.Constants.PARAM_COIN_ID
 import com.plcoding.cryptoapp.common.Resource
 import com.plcoding.cryptoapp.domain.usecase.get_coin.GetCoinUseCase
@@ -35,7 +36,7 @@ class CoinDetailViewModel @Inject constructor(
 
                 is Resource.Error -> {
                     _state.value =
-                        CoinDetailState(error = result.message ?: "An unexpected error occured")
+                        CoinDetailState(error = result.message ?: BASE_ERROR_MESSAGE)
                 }
 
                 is Resource.Loading -> {
